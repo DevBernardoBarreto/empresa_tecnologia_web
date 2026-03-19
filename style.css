@@ -18,24 +18,27 @@ body {
     color: var(--text-main);
     background-color: var(--card-bg);
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
 }
 
 .py-6 { padding: 80px 0; }
 
 /* Navbar */
 .navbar {
-    background-color: rgba(15, 23, 42, 0.9) !important;
+    background-color: rgba(15, 23, 42, 0.95) !important;
     backdrop-filter: blur(10px);
     transition: all 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Hero Section */
 .hero-section {
     min-height: 100vh;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.7)), 
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.8)), 
                 url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .backdrop-blur {
@@ -50,18 +53,20 @@ body {
     border-radius: 12px;
     z-index: 5;
     position: relative;
+    border: 1px solid rgba(128, 128, 128, 0.1);
 }
 
 /* Cards de Serviço */
 .service-card {
     background: var(--card-bg);
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(128, 128, 128, 0.15);
     border-radius: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
+    border-color: var(--primary-color);
 }
 
 /* CAIXA DESTAQUE (Frontend Moderno) - Fixa Letras Brancas */
@@ -71,7 +76,7 @@ body {
     border: none;
 }
 
-.featured-card .icon-box, 
+.featured-card .icon-box i, 
 .featured-card h4, 
 .featured-card p {
     color: #ffffff !important;
@@ -81,6 +86,12 @@ body {
 .project-card {
     background: var(--card-bg);
     border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 .bg-light-custom {
@@ -97,22 +108,44 @@ body {
 .social-icons a {
     color: #64748b;
     margin: 0 8px;
+    font-size: 1.2rem;
     transition: color 0.2s;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
 }
 
 /* Contato */
 .bg-dark-section { background-color: #0f172a; }
 
+/* --- Ajuste de Visibilidade do Formulário --- */
 .custom-input {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white !important;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
+/* Estilo do Placeholder */
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 400;
+}
+
+/* Estado de Foco */
 .custom-input:focus {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     border-color: var(--primary-color);
-    box-shadow: none;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    color: white;
+}
+
+/* Ajuste específico para o rótulo do card de contato */
+#contato .card {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Ajustes visuais de borda */
@@ -122,32 +155,5 @@ body {
 
 @media (max-width: 768px) {
     .border-end-custom { border: none; }
-}
-/* --- Ajuste de Visibilidade do Formulário --- */
-.custom-input {
-    background: rgba(255, 255, 255, 0.08); /* Fundo levemente mais claro */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white !important;
-    padding: 15px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-/* Estilo do Placeholder (Texto que fica dentro do campo) */
-.custom-input::placeholder {
-    color: rgba(255, 255, 255, 0.7) !important; /* Branco com 70% de opacidade para ser bem visível */
-    font-weight: 400;
-}
-
-/* Estado de Foco (Quando clica para digitar) */
-.custom-input:focus {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-    color: white;
-}
-
-/* Ajuste específico para o rótulo do card de contato se necessário */
-#contato .card {
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    .stats-bar { margin-top: 0; border-radius: 0; }
 }

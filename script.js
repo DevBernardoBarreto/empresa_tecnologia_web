@@ -36,26 +36,3 @@ function updateThemeUI(theme) {
 // Fechar menu mobile automaticamente ao clicar em um link
 const navLinks = document.querySelectorAll('.nav-link');
 const menuToggle = document.getElementById('navbarNav');
-
-navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-        if (menuToggle.classList.contains('show')) {
-            new bootstrap.Collapse(menuToggle).toggle();
-        }
-    });
-});
-
-// Manipulação do formulário
-document.getElementById('futureForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const submitBtn = this.querySelector('button');
-    submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Processando...';
-    submitBtn.disabled = true;
-
-    setTimeout(() => {
-        alert('Chamado recebido! Nossa Stack entrará em contato em breve.');
-        submitBtn.innerHTML = 'SOLICITAR CONSULTORIA';
-        submitBtn.disabled = false;
-        this.reset();
-    }, 2000);
-});
