@@ -1,0 +1,153 @@
+:root {
+    --primary-color: #0d6efd;
+    --dark-bg: #0f172a;
+    --text-main: #1e293b;
+    --card-bg: #ffffff;
+    --light-section: #f8fafc;
+}
+
+/* Modo Escuro */
+[data-bs-theme="dark"] {
+    --text-main: #f8fafc;
+    --card-bg: #1e293b;
+    --light-section: #111827;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.py-6 { padding: 80px 0; }
+
+/* Navbar */
+.navbar {
+    background-color: rgba(15, 23, 42, 0.9) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.7)), 
+                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Stats bar */
+.stats-bar {
+    background: var(--card-bg);
+    margin-top: -40px;
+    border-radius: 12px;
+    z-index: 5;
+    position: relative;
+}
+
+/* Cards de Serviço */
+.service-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* CAIXA DESTAQUE (Frontend Moderno) - Fixa Letras Brancas */
+.featured-card {
+    background: var(--primary-color) !important;
+    color: #ffffff !important;
+    border: none;
+}
+
+.featured-card .icon-box, 
+.featured-card h4, 
+.featured-card p {
+    color: #ffffff !important;
+}
+
+/* Portfólio */
+.project-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+}
+
+.bg-light-custom {
+    background-color: var(--light-section) !important;
+}
+
+/* Equipe */
+.team-member img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.social-icons a {
+    color: #64748b;
+    margin: 0 8px;
+    transition: color 0.2s;
+}
+
+/* Contato */
+.bg-dark-section { background-color: #0f172a; }
+
+.custom-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white !important;
+}
+
+.custom-input:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+/* Ajustes visuais de borda */
+.border-end-custom {
+    border-right: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+@media (max-width: 768px) {
+    .border-end-custom { border: none; }
+}
+/* --- Ajuste de Visibilidade do Formulário --- */
+.custom-input {
+    background: rgba(255, 255, 255, 0.08); /* Fundo levemente mais claro */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white !important;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Estilo do Placeholder (Texto que fica dentro do campo) */
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important; /* Branco com 70% de opacidade para ser bem visível */
+    font-weight: 400;
+}
+
+/* Estado de Foco (Quando clica para digitar) */
+.custom-input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    color: white;
+}
+
+/* Ajuste específico para o rótulo do card de contato se necessário */
+#contato .card {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
